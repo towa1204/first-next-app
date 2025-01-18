@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       const response = await fetch(`/api/dinosaurs`);
-      const allDinosaurs = await response.json() as Dino[];
+      const allDinosaurs = (await response.json()) as Dino[];
       setDinosaurs(allDinosaurs);
     })();
   }, []);
@@ -31,5 +31,5 @@ export default function Home() {
         })}
       </ul>
     </main>
-  );  
+  );
 }

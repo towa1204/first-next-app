@@ -10,8 +10,8 @@ export const GET = async (request: NextRequest, { params }: RouteParams) => {
     return Response.json("No dinosaur name provided.");
   }
 
-  const dinosaurData = data.find((item) =>
-    item.name.toLowerCase() === dinosaur.toLowerCase()
+  const dinosaurData = data.find(
+    (item) => item.name.toLowerCase() === dinosaur.toLowerCase()
   );
 
   return Response.json(dinosaurData ? dinosaurData : "No dinosaur found.");
